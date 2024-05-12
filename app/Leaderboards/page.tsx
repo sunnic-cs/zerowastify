@@ -1,9 +1,9 @@
 import React from 'react'
 
-const NewsMedia = () => {
+const Leaderboards = () => {
   return (
     <div>news</div>
   )
 }
 
-export default NewsMedia
+export default Leaderboards

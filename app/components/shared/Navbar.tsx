@@ -6,11 +6,11 @@ import UserProf from '../../../assets/userIcon.png'
 import Menu from '../../../assets/Menu.png';
 
 const navLinks = [
-    {name : 'Home'},
-    {name : 'Our Cause'},
-    {name : 'Waste Bin Status'},
-    {name : 'Leaderboards'},
-    {name : 'Rewards'}
+    {name : 'Home', route:'/'},
+    {name : 'Our Cause', route:'/OurCause'},
+    {name : 'Waste Bin Status', route:'/WasteBinStatus'},
+    {name : 'Leaderboards', route:'/Leaderboards'},
+    {name : 'Rewards', route:'/Rewards'}
   ]
 
 const Navbar = () => {
@@ -21,17 +21,17 @@ const Navbar = () => {
 
             <div className="hidden lg:flex pl-[74px] gap-x-[56px]">
                 {navLinks.map((item,index) => (
-                    <p className="text-[#36485C] font-medium" key={index}>{item.name}</p>
+                    <Link className="text-[#36485C] font-medium" key={index} href={item.route}>{item.name}</Link>
                 ))}
             </div>
         </div>
         <div className="flex gap-x-5">    
             <div className="flex items-center gap-x-2">
-                <p className="hidden lg:block font-medium text-[#36485c] pr-[56px]">Register</p>
+                <Link href="/Register" className="hidden lg:block font-medium text-[#36485c] pr-[56px]">Register</Link>
                 <Image src={UserProf} alt="User Profile" />
-                <span className="hidden font-medium text-[#36485c] lg:block">
+                <Link href="/Login" className="hidden font-medium text-[#36485c] lg:block">
                     Sign In
-                </span>
+                </Link>
             </div>
             
             <Image src={Menu} alt="Menu" className="lg:hidden" />
