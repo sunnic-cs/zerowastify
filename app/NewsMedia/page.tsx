@@ -2,7 +2,7 @@ import React from 'react'
 
 const NewsMedia = () => {
   return (
-    <div>page</div>
+    <div>news</div>
   )
 }
 
