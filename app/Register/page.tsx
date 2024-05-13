@@ -1,20 +1,17 @@
 import React from 'react'
-import backgroundImage from '../../images/BGRegisterLogin.jpeg'
-import Link from 'next/link'
+
+
+import SignUp from './SignUp'
+import Logo from './Logo'
 
 const Register = () => {
   return (
-    <div className="flex min-h-screen flex-col items-center justify-between p-24">
-        <div className="bg-[#212121] p-8 rounded shadows-md w-96">
-            <h1 className="text-4xl text-center font-semibold mb-8">Register</h1>
-            <form>
-                <input type="text" className="w-full border border-gray-300 text-black rounded px-3 py-2 mb-4 focus:outline-none focus:border-blue-400 focus:text-black" placeholder="Email" required />
-                <input type="password" className="w-full border border-gray-300 text-black rounded px-3 py-2 mb-4 focus:outline-none focus:border-blue-400 focus:text-black" placeholder="Password" required />
-            </form>
-            <button type="submit" className="w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-600"> Continue </button>
-            <Link className="block text-center text-blue-500 hover:underline mt-2" href="/Login">Already have an account? Sign in <span>&gt;&gt;</span></Link>
-        </div>
-        
+    <div className="lg:pt-[141px] lg:pl-[132px] lg:container px-4 mx-auto">
+      <div className="flex flex-col lg:gap-x-[108px] justify-center items-center pl-[121px] lg:flex-row gap-y-6">
+        <Logo />        
+        <SignUp />    
+      </div>
+      <p className="text-[#3C3C3C] text-[14px] lg:pt-[242px] fixed bottom-5 left-6"> Copyright © 2024 ZeroWastify  </p>
     </div>
   )
 }
