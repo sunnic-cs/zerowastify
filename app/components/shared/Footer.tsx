@@ -8,7 +8,7 @@ import XIcon from "../../../assets/x_icon.png"
 
 const Footer = () => {
   return (
-    <div className='pt-[288px] pb-[40px]'>
+    <div className='relative bottom-2 pt-20'>
         <div className = "flex items-center justify-center pr-[30px]">
             <Image src={Logo} alt="Logo" />
             <p className="font-bold text-[#5B88AA] text-[24px] tracking-wider">ZEROWASTIFY</p>

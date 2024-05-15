@@ -15,7 +15,9 @@ const OurCause = () => {
       <div className="px-5 lg:container lg:px-20 mx-auto">
         <Features />
       </div>
+      
       <Footer /> 
+
     </>
   )
 }

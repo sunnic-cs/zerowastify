@@ -1,6 +1,5 @@
 import React from 'react'
 import Image from 'next/image'
-import ourcauseImage from '../../assets/ourCauseHeader.png'
 import checkImage from '../../assets/Check.png'
 
 const Features = () => {
@@ -15,7 +14,7 @@ const Features = () => {
         </p>
       </div>
 
-      <div className="flex flex-col gap-y-6 lg:flex-row gap-x-[24px] lg:pl-[131px] lg:pr-[131px]">
+      <div className="flex flex-col gap-y-6 lg:flex-row gap-x-[24px] lg:px-[131px]">
         <div className="w-full rounded-[8px] bg-[#F5F4FF] p-6 flex flex-col lg:justify-between">
             <div>
                 <h3 className="font-medium text-[#4328EB] text-[18px] lg:text-xl">

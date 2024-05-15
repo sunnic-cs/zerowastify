@@ -4,17 +4,18 @@ import Footer from '../components/shared/Footer'
 import Header from './Header'
 import Content from './Content'
 
-const WasteBinStatus = () => {
+const page = () => {
   return (
     <>
-      <Navbar />
-      <Header />
-      <div className="px-5 lg:contaienr lg:px-20 mx-auto lg:py-[130px]">
+    <Navbar />
+    <Header />
+    <div>
         <Content />
-      </div>
-      <Footer />
+    </div>
+
+    <Footer />
     </>
   )
 }
 
-export default WasteBinStatus
+export default page
