@@ -9,7 +9,7 @@ const page = () => {
     <>
     <Navbar />
     <Header />
-    <div>
+    <div className="px-5 lg:container lg:px-20 mx-auto">
         <Content />
     </div>
 

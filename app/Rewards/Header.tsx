@@ -15,7 +15,7 @@ const Header = () => {
               </h1>
             </h1>
             <div className="top-full mt-[25px] border-b-2 border-black w-full"></div>
-            <h3 className="text-[20px] text-black py-[19px]">Home &gt; Our Cause</h3>
+            <h3 className="text-[20px] text-black py-[19px]">Home &gt; Rewards</h3>
           </div>
           <Image className="rounded-[22px]" src={rewardImage} alt="poster"></Image>
         </div>
