@@ -1,13 +1,9 @@
-import { Schema, model } from "mongoose";
+import mongoose, { Schema, model } from "mongoose";
 
 import { UserDocument } from "../interfaces/user";
 
 const UserSchema = new Schema<UserDocument> (
     {
-        name: {
-            type: String,
-            required: true,
-        },
         email: {
           type: String,
           required: [true, "Email is required."],
@@ -23,7 +19,11 @@ const UserSchema = new Schema<UserDocument> (
           enum: ["admin", "user"],
           required: true,
         },
-        username: {
+        firstName: {
+          type: String,
+          required: true,
+        },
+        lastName: {
           type: String,
           required: true,
         },
@@ -51,6 +51,7 @@ const UserSchema = new Schema<UserDocument> (
     }
 );
 
-const UserModel = model<UserDocument>("User", UserSchema);
+// const UserModel = model<UserDocument>("User", UserSchema);
+const UserModel = mongoose.models.User || mongoose.model('User', UserSchema);
 
 export default UserModel;
