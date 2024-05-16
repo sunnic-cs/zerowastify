@@ -1,6 +1,7 @@
 import BlueArrow from '../../assets/BlueArrow.png'
 
 import Image from 'next/image'
+import Link from 'next/link'
 
 export function Hero() {
     return(
@@ -17,13 +18,13 @@ export function Hero() {
                 </p>
 
                 <div className="flex w-full pt-8 justify-center gap-x-6">
-                    <button className="bg-[#4328EB] w-1/2 py-4 px-8 text-white rounded-[4px] lg:w-fit">Join us for free</button>
-                    <button className="text-[#4328EB] w-1/2 flex items-center justify-center gap-x-2 lg:w-fit">
+                    <Link href='/register' className="bg-[#4328EB] w-1/2 py-4 px-8 text-white rounded-[4px] lg:w-fit">Join us for free</Link>
+                    <Link href='/our-cause' className="text-[#4328EB] w-1/2 flex items-center justify-center gap-x-2 lg:w-fit">
                         Learn more
                         <span>
                             <Image src={BlueArrow} alt="Learn more" />
                         </span>
-                    </button>
+                    </Link>
                 </div>
             </div>
 

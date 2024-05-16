@@ -12,7 +12,7 @@ const SignUp = () => {
             </div>
         <RegisterButton />    
         </div>
-        <Link href="/Login" className="font-medium text-right pt-[14px] pr-6 hover:underline">Already have an account? Sign in &gt;&gt;</Link>
+        <Link href="/login" className="font-medium text-right pt-[14px] pr-6 hover:underline">Already have an account? Sign in &gt;&gt;</Link>
     </div>
   )
 }

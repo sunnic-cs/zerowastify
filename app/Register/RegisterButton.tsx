@@ -21,7 +21,7 @@ const RegisterButton = () => {
     try {
       const response = await axios.post('/api/users/register', user)
       console.log('register OK!', response.data);
-      router.push('/Login')
+      router.push('/login')
 
     } catch (err : any) {
       console.log('Failed to sign up ', err.message)

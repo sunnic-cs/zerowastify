@@ -1,8 +1,8 @@
 'use client'
 import React from 'react'
-
-import SignUp from './Register'
 import Logo from './Logo'
+import SignUp from './Register'
+
 
 const Register = () => {
   return (
