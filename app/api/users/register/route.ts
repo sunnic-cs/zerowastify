@@ -37,6 +37,11 @@ export async function POST(req: NextRequest, res: NextResponse ) {
 				{ status: 400 }
 			);
     }
+
+  const now = new Date();
+  // now.setHours(now.getHours() + 8);
+  // const gmtPlus8Time = now.toISOString();
+
     // Password Encryption
     const encryptedPassword = await bcrypt.hash(password, 10);
     const newUser = new UserModel({
@@ -45,6 +50,7 @@ export async function POST(req: NextRequest, res: NextResponse ) {
       role: "user",
       email: email.toLowerCase(),
       password: encryptedPassword,
+      lastTransaction : now
     });
     const savedUser = await newUser.save();
     return NextResponse.json(

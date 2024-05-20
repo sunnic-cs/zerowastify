@@ -9,14 +9,15 @@ const Header = () => {
           <div className="lg:px-[171px] text-left text-[36px] font-medium text-[#39845A] lg:text-[36px] lg:leading-[52px]">
             <h1>Climbing 
               <span className="text-black"> Towards Change</span>
-              <h1 className="text-[#F39A75]">Meet
+              
+            </h1>
+            <h1 className="text-[#F39A75]">Meet
                 <span className="text-[#1B1B1B]"> ZeroWast Warrior</span>
               </h1>
-            </h1>
             <div className="top-full mt-[25px] border-b-2 border-black w-full"></div>
             <h3 className="text-[20px] text-black py-[19px]">Home &gt; Leaderboards</h3>
           </div>
-          <Image className="rounded-[22px]" src={leaderboardImage} alt="poster"></Image>
+          <Image className="rounded-[22px] width:auto height:auto" src={leaderboardImage} alt="poster"></Image>
         </div>
       </div>
   )

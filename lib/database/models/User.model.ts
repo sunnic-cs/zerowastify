@@ -38,7 +38,13 @@ const UserSchema = new Schema<UserDocument> (
         cash : {
           type : Number,
           default : 0
-        },     
+        },  
+        card_id : {
+          type : [String],
+        },
+        lastTransaction : {
+          type : Date
+        } 
     },
     {
       timestamps: true,
@@ -52,6 +58,6 @@ const UserSchema = new Schema<UserDocument> (
 );
 
 // const UserModel = model<UserDocument>("User", UserSchema);
-const UserModel = mongoose.models.User || mongoose.model('User', UserSchema);
+const UserModel = mongoose.models.User || mongoose.model<UserDocument>('User', UserSchema);
 
 export default UserModel;

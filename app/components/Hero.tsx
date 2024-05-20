@@ -2,8 +2,23 @@ import BlueArrow from '../../assets/BlueArrow.png'
 
 import Image from 'next/image'
 import Link from 'next/link'
+import {useEffect, useState} from 'react';
 
 export function Hero() {
+
+    const [user, setUser] = useState<string | null>();
+
+    useEffect(() => {
+        if(typeof window!=='undefined' && 'localStorage' in window) {
+            const storedUser = window.localStorage.getItem("user");
+            if(storedUser !== null) {
+                setUser(storedUser)
+            }
+        }
+    }, [user])
+
+    
+
     return(
         <div className="pt-4 lg:pt-10">
             <div className="px-[20px] lg:px-[280px]">
@@ -18,7 +33,24 @@ export function Hero() {
                 </p>
 
                 <div className="flex w-full pt-8 justify-center gap-x-6">
-                    <Link href='/register' className="bg-[#4328EB] w-1/2 py-4 px-8 text-white rounded-[4px] lg:w-fit">Join us for free</Link>
+                    {user ? (
+                        <>
+                        <Link 
+                        href='/leaderboards' 
+                        className="bg-[#4328EB] w-1/2 py-4 px-8 text-white rounded-[4px] lg:w-fit"
+                        >Top Contributors</Link>    
+                        </> 
+                    ):
+                    (
+                        <>
+                        <Link 
+                            href='/register' 
+                            className="bg-[#4328EB] w-1/2 py-4 px-8 text-white rounded-[4px] lg:w-fit"
+                            >Join us for free</Link>
+                        </>
+                    )
+                    }
+                    
                     <Link href='/our-cause' className="text-[#4328EB] w-1/2 flex items-center justify-center gap-x-2 lg:w-fit">
                         Learn more
                         <span>

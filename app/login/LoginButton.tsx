@@ -22,8 +22,7 @@ const LoginButton = () => {
 		try {
 			const response = await axios.post('api/users/login', user);
 			router.push('/');
-            sessionStorage.setItem("jwt", response.data.payload.token);
-            localStorage.setItem("user", response.data.payload.user.lastName);
+            localStorage.setItem("user", response.data.user.lastName);
 		} catch (error: any) {
             setErrorMessage('Invalid email or password'); 
 		} 
