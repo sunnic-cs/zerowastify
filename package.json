@@ -12,6 +12,7 @@
     "axios": "^1.6.8",
     "bcryptjs": "^2.4.3",
     "dotenv": "^16.4.5",
+    "influx": "^5.9.3",
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.3.5",
     "next": "14.2.3",

@@ -55,7 +55,7 @@ export async function PATCH(req:NextRequest) {
             return NextResponse.json(
                 {
                     success : false,
-                    message : "tags_id is registered under other account, Not Allowed!!"
+                    message : "tags_id is already registered, Not Allowed!!"
                 },
                 {
                     status : 400

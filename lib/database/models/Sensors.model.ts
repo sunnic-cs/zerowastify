@@ -2,7 +2,6 @@ import mongoose, { Schema } from "mongoose";
 import { SensorsDocument } from "../interfaces/sensors";
 
 const SensorsSchema = new Schema<SensorsDocument>({
-    id: { type: Schema.Types.ObjectId, auto: true },
     node_id: { type: String, required: true },
     temperature: { type: Number, required: true },
     humidity: { type: Number, required: true },

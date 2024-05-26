@@ -22,6 +22,7 @@ const Content = () => {
   const onRefreshPoints = async () => {
     try {
       const response = await axios.patch('/api/transaction/waste-points')
+      console.log(response.data.payload);
       setPoints(response.data.payload.points);
     } catch (err : any) {
       console.log("Error fecthing data : ", err.message);

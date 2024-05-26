@@ -22,12 +22,15 @@ export async function PATCH(req:NextRequest, res:NextResponse) {
         }
 
         const lastTransactionDate = userData.lastTransaction;
-        
+
+        const userCardIds = userData.card_id;
+
+        console.log("User Card IDs:", userCardIds);
 
         // Retrieve collection data for the user and after the last transaction date
         const collectionData = await CollectionModel.find({
-            user: userId,
-            dateTime: { $gt: lastTransactionDate }
+            card_id: { $in : userData.card_id},
+            timestamp: { $gt: lastTransactionDate }
         });
 
         if(collectionData === null)  {
@@ -54,15 +57,33 @@ export async function PATCH(req:NextRequest, res:NextResponse) {
         }
 
         // Calculate total collected percentage
-        const totalPoint = collectionData.reduce((sum, collection) => {
-            return sum + collection.collectedPercentage;
-        }, 0);
+        let totalPoint = 0;
+        for(const data of collectionData) 
+        {
+            totalPoint = totalPoint + data.waste_level
+        }
+        
+        
 
         const updatedUserData = await UserModel.findOneAndUpdate({_id : userId}, {
-            points : totalPoint
+            points : totalPoint,
+            lastTransaction : new Date()
         }, {
             new: true
         })
+
+        if(!updatedUserData) {
+            
+            return NextResponse.json(
+                {
+                    success : false,
+                    message : "Error when updating points"
+                },
+                {
+                    status : 500
+                }
+            )
+        }
 
         return NextResponse.json({
             success: true,

@@ -66,7 +66,7 @@ const Navbar = () => {
                 res = await axios.post(apiUrl, { tags_id: value});
                 break;
             case 'tags':
-                apiUrl = '/api/user/add-tags';
+                apiUrl = '/api/users/add-tags';
                 res = await axios.patch(apiUrl, { tags_id: value});
                 break;
             default:

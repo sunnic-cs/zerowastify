@@ -1,27 +1,27 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 
-interface userPoint {
+interface userScore {
     name : string,
-    points : number,
+    total : number,
 }
 
 
 const Content = () => {
 
-    const [userPointList, setUserPointList] = useState<userPoint[]>([]);
+    const [userScoreList, setuserScoreList] = useState<userScore[]>([]);
 
     const getTop5User = async () => {
         try {
             const result = await axios.get("api/users/top-5");
-            const newArray : userPoint[] = [];
+            const newArray : userScore[] = [];
             if (result.data.payload && Array.isArray(result.data.payload)) {
                 
                 result.data.payload.forEach((user : any) => {
-                    const userPoints: userPoint = {name : user.firstName + " " + user.lastName, points: user.points};
-                    newArray.push(userPoints);
+                    const userScore: userScore = {name : user.firstName + " " + user.lastName, total: user.total};
+                    newArray.push(userScore);
                 })
-            setUserPointList(newArray);                   
+                setuserScoreList(newArray);                   
             }
         } catch (error) {
             console.error("Error fetching user data:", error);
@@ -31,10 +31,6 @@ const Content = () => {
     useEffect(() => {
         getTop5User();
     }, []);
-
-    useEffect(() => {
-        console.log("client: ", userPointList);
-    }, [userPointList]);
     
     
   return (
@@ -51,10 +47,10 @@ const Content = () => {
             <div className="flex flex-row justify-between text-[20px] lg:px-[65px] lg:py-[28px] bg-[#3A2F05] px-3 py-2">
                 <h2>001</h2>
                 {
-                    userPointList.length > 0 ? 
+                    userScoreList.length > 0 ? 
                     <>
-                    <h2>{userPointList[0].name}</h2>
-                    <h2>{userPointList[0].points}</h2>
+                    <h2>{userScoreList[0].name}</h2>
+                    <h2>{userScoreList[0].total}</h2>
                     </> : <>
                     <h2>N/A</h2>
                     <h2>N/A</h2>
@@ -65,10 +61,10 @@ const Content = () => {
             <div className="flex flex-row justify-between text-[20px] lg:px-[65px] lg:py-[28px] bg-[#292E37] px-3 py-2">
                 <h2>002</h2>
                 {
-                    userPointList.length > 1 ? 
+                    userScoreList.length > 1 ? 
                     <>
-                    <h2>{userPointList[1].name}</h2>
-                    <h2>{userPointList[1].points}</h2>
+                    <h2>{userScoreList[1].name}</h2>
+                    <h2>{userScoreList[1].total}</h2>
                     </> : <>
                     <h2>N/A</h2>
                     <h2>N/A</h2>
@@ -78,10 +74,10 @@ const Content = () => {
             <div className="flex flex-row justify-between text-[20px] lg:px-[65px] lg:py-[28px] bg-[#271304] px-3 py-2">
                 <h2>003</h2>
                 {
-                    userPointList.length > 2 ? 
+                    userScoreList.length > 2 ? 
                     <>
-                    <h2>{userPointList[2].name}</h2>
-                    <h2>{userPointList[2].points}</h2>
+                    <h2>{userScoreList[2].name}</h2>
+                    <h2>{userScoreList[2].total}</h2>
                     </> : <>
                     <h2>N/A</h2>
                     <h2>N/A</h2>
@@ -91,10 +87,10 @@ const Content = () => {
             <div className="flex flex-row justify-between text-[20px] lg:px-[65px] lg:py-[28px] bg-[#0A0A0A] px-3 py-2">
                 <h2>004</h2>
                 {
-                    userPointList.length > 3 ? 
+                    userScoreList.length > 3 ? 
                     <>
-                    <h2>{userPointList[3].name}</h2>
-                    <h2>{userPointList[3].points}</h2>
+                    <h2>{userScoreList[3].name}</h2>
+                    <h2>{userScoreList[3].total}</h2>
                     </> : <>
                     <h2>N/A</h2>
                     <h2>N/A</h2>
@@ -104,10 +100,10 @@ const Content = () => {
             <div className="flex flex-row justify-between text-[20px] lg:px-[65px] lg:py-[28px] bg-[#101010] px-3 py-2">
                 <h2>005</h2>
                 {
-                    userPointList.length > 4 ? 
+                    userScoreList.length > 4 ? 
                     <>
-                    <h2>{userPointList[4].name}</h2>
-                    <h2>{userPointList[4].points}</h2>
+                    <h2>{userScoreList[4].name}</h2>
+                    <h2>{userScoreList[4].total}</h2>
                     </> : <>
                     <h2>N/A</h2>
                     <h2>N/A</h2>

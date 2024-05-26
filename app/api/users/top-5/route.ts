@@ -9,9 +9,19 @@ connectToDatabase();
 // GET
 export async function GET(req: NextRequest, res:NextResponse) {
     try {
-        const result = await UserModel.find({})
-        .sort({points: -1})
-        .limit(5);
+        const result = await UserModel.aggregate([
+            {
+              $addFields: {
+                total: { $add: ["$points", "$cash"] }
+              }
+            },
+            {
+              $sort: { total: -1 }
+            },
+            {
+              $limit: 5
+            }
+          ]);
 
         if(!result) {
             return NextResponse.json({
