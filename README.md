@@ -26,6 +26,8 @@ password : password
 Email : admin@gmail.com
 password : admin
 
+You can add your own users by registering new account into the database by using the register feature API call in the web application
+
 .env file is where the connection URI to the mongodb cluster is available 
 (Ensure that this file exist)
 
